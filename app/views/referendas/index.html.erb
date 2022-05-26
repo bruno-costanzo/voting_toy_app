@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+<p style="color: red"><%= alert %></p>
+<h1>Referendas</h1>
+
+<div>
+  <h3>Register Person</h3>
+  <%= render "people/form", person: @new_voter %>
+</div>
+
+<div>
+  <h3>Create Referenda</h3>
+  <%= render "form", referenda: @new_referenda %>
+</div>
+
+<div id="referendas">
+  <% @referendas.each do |referenda| %>
+    <%= render referenda %>
+  <% end %>
+</div>
+

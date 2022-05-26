@@ -1,0 +1,6 @@
+<%= form_with model: vote, url: votes_create_path, method: :post do |f| %>
+  <%= f.select(:person_id, options_for_select(person_options)) %>
+  <%= f.select(:value, [["Yes", true], ["No", false]], prompt: "Vote for")%>
+  <%= f.hidden_field :referenda_id, value: referenda.id %>
+  <%= f.submit "Create" %>
+<% end %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @referenda %>
+
+<div>
+  <%= link_to "Edit this referenda", edit_referenda_path(@referenda) %> |
+  <%= link_to "Back to referendas", referendas_path %>
+
+  <%= button_to "Destroy this referenda", @referenda, method: :delete %>
+</div>

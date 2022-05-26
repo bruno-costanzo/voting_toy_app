@@ -1,0 +1,20 @@
+<div id="<%= dom_id referenda %>">
+  <p>
+    <strong>Question:</strong>
+    <%= referenda.question %>
+  </p>
+  <p>
+    <%= render '/votes/register', { referenda: referenda, person_options: @person_options, vote: @vote } %>
+  </p>
+  <% if referenda.votes.any? %>
+    <p>
+      <strong>Votes:</strong>
+    </p>
+    <p>
+      Yes: <%= "#{referenda.votes.affirmatives.count} | #{(referenda.votes.affirmatives.count / referenda.votes.count.to_f) * 100}%" %>
+    </p>
+    <p>
+      No: <%= "#{referenda.votes.negatives.count} | #{(referenda.votes.negatives.count / referenda.votes.count.to_f) * 100}%" %>
+    </p>
+  <% end %>
+</div>
